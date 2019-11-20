@@ -46,6 +46,11 @@
             this.txtLogFont = new System.Windows.Forms.TextBox();
             this.btnTest = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.trsTTS = new System.Windows.Forms.TrackBar();
+            this.TTSVt = new System.Windows.Forms.Label();
+            this.TTSst = new System.Windows.Forms.Label();
+            this.comboTTS = new System.Windows.Forms.ComboBox();
+            this.chkUseTTS = new System.Windows.Forms.CheckBox();
             this.btnSoundPlay = new System.Windows.Forms.Button();
             this.txtSoundFile = new System.Windows.Forms.TextBox();
             this.btnSelectSound = new System.Windows.Forms.Button();
@@ -67,11 +72,6 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.ilTab = new System.Windows.Forms.ImageList(this.components);
-            this.chkUseTTS = new System.Windows.Forms.CheckBox();
-            this.comboTTS = new System.Windows.Forms.ComboBox();
-            this.TTSst = new System.Windows.Forms.Label();
-            this.TTSVt = new System.Windows.Forms.Label();
-            this.trsTTS = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
             this.splitBase.Panel2.SuspendLayout();
@@ -81,10 +81,10 @@
             this.tabPageSetting.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trsTTS)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPageInformation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trsTTS)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -286,6 +286,55 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(236, 158);
             this.panel3.TabIndex = 18;
+            // 
+            // trsTTS
+            // 
+            this.trsTTS.AutoSize = false;
+            this.trsTTS.Location = new System.Drawing.Point(91, 126);
+            this.trsTTS.Maximum = 100;
+            this.trsTTS.Name = "trsTTS";
+            this.trsTTS.Size = new System.Drawing.Size(138, 25);
+            this.trsTTS.TabIndex = 20;
+            // 
+            // TTSVt
+            // 
+            this.TTSVt.AutoSize = true;
+            this.TTSVt.Location = new System.Drawing.Point(1, 127);
+            this.TTSVt.Name = "TTSVt";
+            this.TTSVt.Size = new System.Drawing.Size(76, 17);
+            this.TTSVt.TabIndex = 14;
+            this.TTSVt.Text = "TTS Volume";
+            // 
+            // TTSst
+            // 
+            this.TTSst.AutoSize = true;
+            this.TTSst.Location = new System.Drawing.Point(1, 91);
+            this.TTSst.Name = "TTSst";
+            this.TTSst.Size = new System.Drawing.Size(67, 17);
+            this.TTSst.TabIndex = 19;
+            this.TTSst.Text = "TTS Select";
+            // 
+            // comboTTS
+            // 
+            this.comboTTS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboTTS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTTS.FormattingEnabled = true;
+            this.comboTTS.Location = new System.Drawing.Point(91, 84);
+            this.comboTTS.Name = "comboTTS";
+            this.comboTTS.Size = new System.Drawing.Size(138, 25);
+            this.comboTTS.TabIndex = 6;
+            // 
+            // chkUseTTS
+            // 
+            this.chkUseTTS.AutoSize = true;
+            this.chkUseTTS.Location = new System.Drawing.Point(-1, 61);
+            this.chkUseTTS.Name = "chkUseTTS";
+            this.chkUseTTS.Size = new System.Drawing.Size(74, 21);
+            this.chkUseTTS.TabIndex = 18;
+            this.chkUseTTS.Text = "Use TTS";
+            this.chkUseTTS.UseVisualStyleBackColor = true;
+            this.chkUseTTS.CheckedChanged += new System.EventHandler(this.chkUseTTS_CheckedChanged);
             // 
             // btnSoundPlay
             // 
@@ -522,54 +571,6 @@
             this.ilTab.Images.SetKeyName(3, "Player2_Icon.png");
             this.ilTab.Images.SetKeyName(4, "Player12_Icon.png");
             // 
-            // chkUseTTS
-            // 
-            this.chkUseTTS.AutoSize = true;
-            this.chkUseTTS.Location = new System.Drawing.Point(-1, 61);
-            this.chkUseTTS.Name = "chkUseTTS";
-            this.chkUseTTS.Size = new System.Drawing.Size(74, 21);
-            this.chkUseTTS.TabIndex = 18;
-            this.chkUseTTS.Text = "Use TTS";
-            this.chkUseTTS.UseVisualStyleBackColor = true;
-            this.chkUseTTS.CheckedChanged += new System.EventHandler(this.chkUseTTS_CheckedChanged);
-            // 
-            // comboTTS
-            // 
-            this.comboTTS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboTTS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTTS.FormattingEnabled = true;
-            this.comboTTS.Location = new System.Drawing.Point(91, 84);
-            this.comboTTS.Name = "comboTTS";
-            this.comboTTS.Size = new System.Drawing.Size(138, 25);
-            this.comboTTS.TabIndex = 6;
-            // 
-            // TTSst
-            // 
-            this.TTSst.AutoSize = true;
-            this.TTSst.Location = new System.Drawing.Point(1, 91);
-            this.TTSst.Name = "TTSst";
-            this.TTSst.Size = new System.Drawing.Size(67, 17);
-            this.TTSst.TabIndex = 19;
-            this.TTSst.Text = "TTS Select";
-            // 
-            // TTSVt
-            // 
-            this.TTSVt.AutoSize = true;
-            this.TTSVt.Location = new System.Drawing.Point(1, 127);
-            this.TTSVt.Name = "TTSVt";
-            this.TTSVt.Size = new System.Drawing.Size(76, 17);
-            this.TTSVt.TabIndex = 14;
-            this.TTSVt.Text = "TTS Volume";
-            // 
-            // trsTTS
-            // 
-            this.trsTTS.AutoSize = false;
-            this.trsTTS.Location = new System.Drawing.Point(91, 126);
-            this.trsTTS.Name = "trsTTS";
-            this.trsTTS.Size = new System.Drawing.Size(138, 25);
-            this.trsTTS.TabIndex = 20;
-            // 
             // MainControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -589,13 +590,13 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trsTTS)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPageInformation.ResumeLayout(false);
             this.tabPageInformation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trsTTS)).EndInit();
             this.ResumeLayout(false);
 
         }
