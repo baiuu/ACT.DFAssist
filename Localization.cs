@@ -23,6 +23,7 @@ namespace ACT.DFAssist
             new Locale{Name="Deutsch", Code="de"},
             new Locale{Name="Le français", Code="fr"},
             new Locale{Name="한국말", Code="ko"},
+            new Locale{Name="中文", Code="cn"},
         };
 
         public static readonly Locale DefaultLocale = new Locale { Name = "English", Code = "en" };
