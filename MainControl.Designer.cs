@@ -38,35 +38,40 @@
             this.tabLeft = new System.Windows.Forms.TabControl();
             this.tabPageFates = new System.Windows.Forms.TabPage();
             this.tabPageSetting = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.cboUiLanguage = new System.Windows.Forms.ComboBox();
+            this.cboGameLanguage = new System.Windows.Forms.ComboBox();
+            this.lblUiLanguage = new System.Windows.Forms.Label();
+            this.lblGameLanguage = new System.Windows.Forms.Label();
             this.txtLogFont = new System.Windows.Forms.TextBox();
             this.btnTest = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSoundPlay = new System.Windows.Forms.Button();
             this.txtSoundFile = new System.Windows.Forms.TextBox();
+            this.btnSelectSound = new System.Windows.Forms.Button();
             this.chkUseSound = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chkUseOverlay = new System.Windows.Forms.CheckBox();
+            this.chkWholeFates = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDisplayFont = new System.Windows.Forms.Label();
             this.btnLogFont = new System.Windows.Forms.Button();
-            this.chkWholeFates = new System.Windows.Forms.CheckBox();
+            this.btnClearLogs = new System.Windows.Forms.Button();
             this.lblBackColor = new System.Windows.Forms.Label();
             this.cboLogBackground = new System.Windows.Forms.ComboBox();
             this.txtOverayLocation = new System.Windows.Forms.TextBox();
             this.txtSelectedFates = new System.Windows.Forms.TextBox();
-            this.lblUiLanguage = new System.Windows.Forms.Label();
-            this.cboUiLanguage = new System.Windows.Forms.ComboBox();
-            this.cboGameLanguage = new System.Windows.Forms.ComboBox();
-            this.lblGameLanguage = new System.Windows.Forms.Label();
+            this.btnReconnect = new System.Windows.Forms.Button();
             this.tabPageInformation = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.ilTab = new System.Windows.Forms.ImageList(this.components);
-            this.btnSoundPlay = new System.Windows.Forms.Button();
-            this.btnSelectSound = new System.Windows.Forms.Button();
-            this.btnClearLogs = new System.Windows.Forms.Button();
-            this.btnReconnect = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.chkUseTTS = new System.Windows.Forms.CheckBox();
+            this.comboTTS = new System.Windows.Forms.ComboBox();
+            this.TTSst = new System.Windows.Forms.Label();
+            this.TTSVt = new System.Windows.Forms.Label();
+            this.trsTTS = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).BeginInit();
             this.splitBase.Panel1.SuspendLayout();
             this.splitBase.Panel2.SuspendLayout();
@@ -74,17 +79,18 @@
             this.tabLeft.SuspendLayout();
             this.tabPageFates.SuspendLayout();
             this.tabPageSetting.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPageInformation.SuspendLayout();
-            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trsTTS)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 0;
@@ -93,7 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 474);
+            this.label2.Location = new System.Drawing.Point(33, 438);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 17);
             this.label2.TabIndex = 1;
@@ -109,7 +115,7 @@
             this.rtxLogger.Location = new System.Drawing.Point(0, 0);
             this.rtxLogger.Name = "rtxLogger";
             this.rtxLogger.ReadOnly = true;
-            this.rtxLogger.Size = new System.Drawing.Size(658, 559);
+            this.rtxLogger.Size = new System.Drawing.Size(658, 516);
             this.rtxLogger.TabIndex = 2;
             this.rtxLogger.Text = "";
             // 
@@ -119,7 +125,7 @@
             this.trvFates.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvFates.Location = new System.Drawing.Point(3, 3);
             this.trvFates.Name = "trvFates";
-            this.trvFates.Size = new System.Drawing.Size(236, 510);
+            this.trvFates.Size = new System.Drawing.Size(236, 467);
             this.trvFates.TabIndex = 3;
             this.trvFates.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.TrvFates_AfterCheck);
             // 
@@ -136,7 +142,7 @@
             // splitBase.Panel2
             // 
             this.splitBase.Panel2.Controls.Add(this.rtxLogger);
-            this.splitBase.Size = new System.Drawing.Size(912, 559);
+            this.splitBase.Size = new System.Drawing.Size(912, 516);
             this.splitBase.SplitterDistance = 250;
             this.splitBase.TabIndex = 4;
             // 
@@ -151,7 +157,7 @@
             this.tabLeft.Location = new System.Drawing.Point(0, 0);
             this.tabLeft.Name = "tabLeft";
             this.tabLeft.SelectedIndex = 0;
-            this.tabLeft.Size = new System.Drawing.Size(250, 559);
+            this.tabLeft.Size = new System.Drawing.Size(250, 516);
             this.tabLeft.TabIndex = 5;
             // 
             // tabPageFates
@@ -162,7 +168,7 @@
             this.tabPageFates.Location = new System.Drawing.Point(4, 39);
             this.tabPageFates.Name = "tabPageFates";
             this.tabPageFates.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFates.Size = new System.Drawing.Size(242, 516);
+            this.tabPageFates.Size = new System.Drawing.Size(242, 473);
             this.tabPageFates.TabIndex = 0;
             this.tabPageFates.Text = "FATEs";
             this.tabPageFates.UseVisualStyleBackColor = true;
@@ -182,14 +188,70 @@
             this.tabPageSetting.Location = new System.Drawing.Point(4, 39);
             this.tabPageSetting.Name = "tabPageSetting";
             this.tabPageSetting.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSetting.Size = new System.Drawing.Size(242, 516);
+            this.tabPageSetting.Size = new System.Drawing.Size(242, 473);
             this.tabPageSetting.TabIndex = 1;
             this.tabPageSetting.Text = "Setting";
             this.tabPageSetting.UseVisualStyleBackColor = true;
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.cboUiLanguage);
+            this.panel4.Controls.Add(this.cboGameLanguage);
+            this.panel4.Controls.Add(this.lblUiLanguage);
+            this.panel4.Controls.Add(this.lblGameLanguage);
+            this.panel4.Location = new System.Drawing.Point(3, 54);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(236, 60);
+            this.panel4.TabIndex = 21;
+            // 
+            // cboUiLanguage
+            // 
+            this.cboUiLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboUiLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUiLanguage.FormattingEnabled = true;
+            this.cboUiLanguage.Location = new System.Drawing.Point(91, 3);
+            this.cboUiLanguage.Name = "cboUiLanguage";
+            this.cboUiLanguage.Size = new System.Drawing.Size(140, 25);
+            this.cboUiLanguage.TabIndex = 3;
+            this.cboUiLanguage.SelectedValueChanged += new System.EventHandler(this.CboUiLanguage_SelectedValueChanged);
+            // 
+            // cboGameLanguage
+            // 
+            this.cboGameLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboGameLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGameLanguage.FormattingEnabled = true;
+            this.cboGameLanguage.Location = new System.Drawing.Point(91, 31);
+            this.cboGameLanguage.Name = "cboGameLanguage";
+            this.cboGameLanguage.Size = new System.Drawing.Size(140, 25);
+            this.cboGameLanguage.TabIndex = 5;
+            this.cboGameLanguage.SelectedValueChanged += new System.EventHandler(this.CboGameLanguage_SelectedValueChanged);
+            // 
+            // lblUiLanguage
+            // 
+            this.lblUiLanguage.AutoSize = true;
+            this.lblUiLanguage.Location = new System.Drawing.Point(4, 6);
+            this.lblUiLanguage.Name = "lblUiLanguage";
+            this.lblUiLanguage.Size = new System.Drawing.Size(81, 17);
+            this.lblUiLanguage.TabIndex = 2;
+            this.lblUiLanguage.Text = "UI Language";
+            // 
+            // lblGameLanguage
+            // 
+            this.lblGameLanguage.AutoSize = true;
+            this.lblGameLanguage.Location = new System.Drawing.Point(4, 34);
+            this.lblGameLanguage.Name = "lblGameLanguage";
+            this.lblGameLanguage.Size = new System.Drawing.Size(56, 17);
+            this.lblGameLanguage.TabIndex = 4;
+            this.lblGameLanguage.Text = "In Game";
+            // 
             // txtLogFont
             // 
-            this.txtLogFont.Location = new System.Drawing.Point(136, 488);
+            this.txtLogFont.Location = new System.Drawing.Point(136, 450);
             this.txtLogFont.Name = "txtLogFont";
             this.txtLogFont.Size = new System.Drawing.Size(20, 25);
             this.txtLogFont.TabIndex = 20;
@@ -197,9 +259,9 @@
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(6, 485);
+            this.btnTest.Location = new System.Drawing.Point(6, 448);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(46, 26);
+            this.btnTest.Size = new System.Drawing.Size(46, 24);
             this.btnTest.TabIndex = 19;
             this.btnTest.Text = "TEST!!!";
             this.btnTest.UseVisualStyleBackColor = true;
@@ -211,24 +273,49 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.trsTTS);
+            this.panel3.Controls.Add(this.TTSVt);
+            this.panel3.Controls.Add(this.TTSst);
+            this.panel3.Controls.Add(this.comboTTS);
+            this.panel3.Controls.Add(this.chkUseTTS);
             this.panel3.Controls.Add(this.btnSoundPlay);
             this.panel3.Controls.Add(this.txtSoundFile);
             this.panel3.Controls.Add(this.btnSelectSound);
             this.panel3.Controls.Add(this.chkUseSound);
-            this.panel3.Location = new System.Drawing.Point(3, 191);
+            this.panel3.Location = new System.Drawing.Point(3, 176);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(236, 103);
+            this.panel3.Size = new System.Drawing.Size(236, 158);
             this.panel3.TabIndex = 18;
+            // 
+            // btnSoundPlay
+            // 
+            this.btnSoundPlay.Image = global::ACT.DFAssist.Properties.Resources.play;
+            this.btnSoundPlay.Location = new System.Drawing.Point(-1, 25);
+            this.btnSoundPlay.Name = "btnSoundPlay";
+            this.btnSoundPlay.Size = new System.Drawing.Size(32, 30);
+            this.btnSoundPlay.TabIndex = 17;
+            this.btnSoundPlay.UseVisualStyleBackColor = true;
+            this.btnSoundPlay.Click += new System.EventHandler(this.BtnSoundPlay_Click);
             // 
             // txtSoundFile
             // 
             this.txtSoundFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSoundFile.Location = new System.Drawing.Point(44, 30);
+            this.txtSoundFile.Location = new System.Drawing.Point(91, 3);
             this.txtSoundFile.Multiline = true;
             this.txtSoundFile.Name = "txtSoundFile";
-            this.txtSoundFile.Size = new System.Drawing.Size(184, 68);
+            this.txtSoundFile.Size = new System.Drawing.Size(138, 30);
             this.txtSoundFile.TabIndex = 16;
+            // 
+            // btnSelectSound
+            // 
+            this.btnSelectSound.Image = global::ACT.DFAssist.Properties.Resources.magnifyingglassicon_114513_22;
+            this.btnSelectSound.Location = new System.Drawing.Point(37, 25);
+            this.btnSelectSound.Name = "btnSelectSound";
+            this.btnSelectSound.Size = new System.Drawing.Size(32, 30);
+            this.btnSelectSound.TabIndex = 15;
+            this.btnSelectSound.UseVisualStyleBackColor = true;
+            this.btnSelectSound.Click += new System.EventHandler(this.BtnSelectSound_Click);
             // 
             // chkUseSound
             // 
@@ -248,9 +335,9 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.chkUseOverlay);
             this.panel2.Controls.Add(this.chkWholeFates);
-            this.panel2.Location = new System.Drawing.Point(3, 129);
+            this.panel2.Location = new System.Drawing.Point(3, 119);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(236, 56);
+            this.panel2.Size = new System.Drawing.Size(236, 52);
             this.panel2.TabIndex = 17;
             // 
             // chkUseOverlay
@@ -264,6 +351,17 @@
             this.chkUseOverlay.UseVisualStyleBackColor = true;
             this.chkUseOverlay.CheckedChanged += new System.EventHandler(this.ChkUseOverlay_CheckedChanged);
             // 
+            // chkWholeFates
+            // 
+            this.chkWholeFates.AutoSize = true;
+            this.chkWholeFates.Location = new System.Drawing.Point(2, 28);
+            this.chkWholeFates.Name = "chkWholeFates";
+            this.chkWholeFates.Size = new System.Drawing.Size(149, 21);
+            this.chkWholeFates.TabIndex = 11;
+            this.chkWholeFates.Text = "Logging whole FATEs";
+            this.chkWholeFates.UseVisualStyleBackColor = true;
+            this.chkWholeFates.CheckedChanged += new System.EventHandler(this.ChkWholeFates_CheckedChanged);
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -274,15 +372,15 @@
             this.panel1.Controls.Add(this.btnClearLogs);
             this.panel1.Controls.Add(this.lblBackColor);
             this.panel1.Controls.Add(this.cboLogBackground);
-            this.panel1.Location = new System.Drawing.Point(3, 300);
+            this.panel1.Location = new System.Drawing.Point(3, 336);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(236, 115);
+            this.panel1.Size = new System.Drawing.Size(236, 106);
             this.panel1.TabIndex = 16;
             // 
             // lblDisplayFont
             // 
             this.lblDisplayFont.AutoSize = true;
-            this.lblDisplayFont.Location = new System.Drawing.Point(2, 38);
+            this.lblDisplayFont.Location = new System.Drawing.Point(2, 35);
             this.lblDisplayFont.Name = "lblDisplayFont";
             this.lblDisplayFont.Size = new System.Drawing.Size(77, 17);
             this.lblDisplayFont.TabIndex = 13;
@@ -292,24 +390,27 @@
             // 
             this.btnLogFont.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogFont.Location = new System.Drawing.Point(91, 35);
+            this.btnLogFont.Location = new System.Drawing.Point(91, 32);
             this.btnLogFont.Name = "btnLogFont";
-            this.btnLogFont.Size = new System.Drawing.Size(141, 23);
+            this.btnLogFont.Size = new System.Drawing.Size(141, 21);
             this.btnLogFont.TabIndex = 12;
             this.btnLogFont.Text = "Font";
             this.btnLogFont.UseVisualStyleBackColor = true;
             this.btnLogFont.Click += new System.EventHandler(this.BtnLogFont_Click);
             // 
-            // chkWholeFates
+            // btnClearLogs
             // 
-            this.chkWholeFates.AutoSize = true;
-            this.chkWholeFates.Location = new System.Drawing.Point(2, 30);
-            this.chkWholeFates.Name = "chkWholeFates";
-            this.chkWholeFates.Size = new System.Drawing.Size(149, 21);
-            this.chkWholeFates.TabIndex = 11;
-            this.chkWholeFates.Text = "Logging whole FATEs";
-            this.chkWholeFates.UseVisualStyleBackColor = true;
-            this.chkWholeFates.CheckedChanged += new System.EventHandler(this.ChkWholeFates_CheckedChanged);
+            this.btnClearLogs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearLogs.Image = global::ACT.DFAssist.Properties.Resources.btn_del;
+            this.btnClearLogs.Location = new System.Drawing.Point(91, 59);
+            this.btnClearLogs.Name = "btnClearLogs";
+            this.btnClearLogs.Size = new System.Drawing.Size(141, 41);
+            this.btnClearLogs.TabIndex = 6;
+            this.btnClearLogs.Text = "Clear Logs";
+            this.btnClearLogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClearLogs.UseVisualStyleBackColor = true;
+            this.btnClearLogs.Click += new System.EventHandler(this.BtnClearLogs_Click);
             // 
             // lblBackColor
             // 
@@ -336,7 +437,7 @@
             // 
             // txtOverayLocation
             // 
-            this.txtOverayLocation.Location = new System.Drawing.Point(199, 485);
+            this.txtOverayLocation.Location = new System.Drawing.Point(199, 448);
             this.txtOverayLocation.Name = "txtOverayLocation";
             this.txtOverayLocation.Size = new System.Drawing.Size(34, 25);
             this.txtOverayLocation.TabIndex = 15;
@@ -345,53 +446,25 @@
             // 
             // txtSelectedFates
             // 
-            this.txtSelectedFates.Location = new System.Drawing.Point(162, 486);
+            this.txtSelectedFates.Location = new System.Drawing.Point(162, 449);
             this.txtSelectedFates.Name = "txtSelectedFates";
             this.txtSelectedFates.Size = new System.Drawing.Size(31, 25);
             this.txtSelectedFates.TabIndex = 12;
             this.txtSelectedFates.Visible = false;
             // 
-            // lblUiLanguage
+            // btnReconnect
             // 
-            this.lblUiLanguage.AutoSize = true;
-            this.lblUiLanguage.Location = new System.Drawing.Point(4, 6);
-            this.lblUiLanguage.Name = "lblUiLanguage";
-            this.lblUiLanguage.Size = new System.Drawing.Size(81, 17);
-            this.lblUiLanguage.TabIndex = 2;
-            this.lblUiLanguage.Text = "UI Language";
-            // 
-            // cboUiLanguage
-            // 
-            this.cboUiLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnReconnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboUiLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboUiLanguage.FormattingEnabled = true;
-            this.cboUiLanguage.Location = new System.Drawing.Point(91, 3);
-            this.cboUiLanguage.Name = "cboUiLanguage";
-            this.cboUiLanguage.Size = new System.Drawing.Size(140, 25);
-            this.cboUiLanguage.TabIndex = 3;
-            this.cboUiLanguage.SelectedValueChanged += new System.EventHandler(this.CboUiLanguage_SelectedValueChanged);
-            // 
-            // cboGameLanguage
-            // 
-            this.cboGameLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboGameLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGameLanguage.FormattingEnabled = true;
-            this.cboGameLanguage.Location = new System.Drawing.Point(91, 34);
-            this.cboGameLanguage.Name = "cboGameLanguage";
-            this.cboGameLanguage.Size = new System.Drawing.Size(140, 25);
-            this.cboGameLanguage.TabIndex = 5;
-            this.cboGameLanguage.SelectedValueChanged += new System.EventHandler(this.CboGameLanguage_SelectedValueChanged);
-            // 
-            // lblGameLanguage
-            // 
-            this.lblGameLanguage.AutoSize = true;
-            this.lblGameLanguage.Location = new System.Drawing.Point(4, 37);
-            this.lblGameLanguage.Name = "lblGameLanguage";
-            this.lblGameLanguage.Size = new System.Drawing.Size(56, 17);
-            this.lblGameLanguage.TabIndex = 4;
-            this.lblGameLanguage.Text = "In Game";
+            this.btnReconnect.Image = global::ACT.DFAssist.Properties.Resources.Player2_Icon;
+            this.btnReconnect.Location = new System.Drawing.Point(3, 6);
+            this.btnReconnect.Name = "btnReconnect";
+            this.btnReconnect.Size = new System.Drawing.Size(236, 42);
+            this.btnReconnect.TabIndex = 10;
+            this.btnReconnect.Text = "Reconnect";
+            this.btnReconnect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReconnect.UseVisualStyleBackColor = true;
+            this.btnReconnect.Click += new System.EventHandler(this.BtnReconnect_Click);
             // 
             // tabPageInformation
             // 
@@ -403,7 +476,7 @@
             this.tabPageInformation.ImageIndex = 4;
             this.tabPageInformation.Location = new System.Drawing.Point(4, 39);
             this.tabPageInformation.Name = "tabPageInformation";
-            this.tabPageInformation.Size = new System.Drawing.Size(242, 516);
+            this.tabPageInformation.Size = new System.Drawing.Size(242, 473);
             this.tabPageInformation.TabIndex = 2;
             this.tabPageInformation.Text = "Info";
             this.tabPageInformation.UseVisualStyleBackColor = true;
@@ -411,7 +484,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 133);
+            this.label3.Location = new System.Drawing.Point(3, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(191, 51);
             this.label3.TabIndex = 9;
@@ -420,7 +493,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(3, 58);
+            this.linkLabel2.Location = new System.Drawing.Point(3, 54);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(137, 17);
             this.linkLabel2.TabIndex = 8;
@@ -431,7 +504,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(3, 41);
+            this.linkLabel1.Location = new System.Drawing.Point(3, 38);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(115, 17);
             this.linkLabel1.TabIndex = 7;
@@ -449,75 +522,61 @@
             this.ilTab.Images.SetKeyName(3, "Player2_Icon.png");
             this.ilTab.Images.SetKeyName(4, "Player12_Icon.png");
             // 
-            // btnSoundPlay
+            // chkUseTTS
             // 
-            this.btnSoundPlay.Image = global::ACT.DFAssist.Properties.Resources.play;
-            this.btnSoundPlay.Location = new System.Drawing.Point(8, 29);
-            this.btnSoundPlay.Name = "btnSoundPlay";
-            this.btnSoundPlay.Size = new System.Drawing.Size(32, 32);
-            this.btnSoundPlay.TabIndex = 17;
-            this.btnSoundPlay.UseVisualStyleBackColor = true;
-            this.btnSoundPlay.Click += new System.EventHandler(this.BtnSoundPlay_Click);
+            this.chkUseTTS.AutoSize = true;
+            this.chkUseTTS.Location = new System.Drawing.Point(-1, 61);
+            this.chkUseTTS.Name = "chkUseTTS";
+            this.chkUseTTS.Size = new System.Drawing.Size(74, 21);
+            this.chkUseTTS.TabIndex = 18;
+            this.chkUseTTS.Text = "Use TTS";
+            this.chkUseTTS.UseVisualStyleBackColor = true;
+            this.chkUseTTS.CheckedChanged += new System.EventHandler(this.chkUseTTS_CheckedChanged);
             // 
-            // btnSelectSound
+            // comboTTS
             // 
-            this.btnSelectSound.Image = global::ACT.DFAssist.Properties.Resources.magnifyingglassicon_114513_22;
-            this.btnSelectSound.Location = new System.Drawing.Point(8, 66);
-            this.btnSelectSound.Name = "btnSelectSound";
-            this.btnSelectSound.Size = new System.Drawing.Size(32, 32);
-            this.btnSelectSound.TabIndex = 15;
-            this.btnSelectSound.UseVisualStyleBackColor = true;
-            this.btnSelectSound.Click += new System.EventHandler(this.BtnSelectSound_Click);
-            // 
-            // btnClearLogs
-            // 
-            this.btnClearLogs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboTTS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearLogs.Image = global::ACT.DFAssist.Properties.Resources.btn_del;
-            this.btnClearLogs.Location = new System.Drawing.Point(91, 64);
-            this.btnClearLogs.Name = "btnClearLogs";
-            this.btnClearLogs.Size = new System.Drawing.Size(141, 44);
-            this.btnClearLogs.TabIndex = 6;
-            this.btnClearLogs.Text = "Clear Logs";
-            this.btnClearLogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClearLogs.UseVisualStyleBackColor = true;
-            this.btnClearLogs.Click += new System.EventHandler(this.BtnClearLogs_Click);
+            this.comboTTS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTTS.FormattingEnabled = true;
+            this.comboTTS.Location = new System.Drawing.Point(91, 84);
+            this.comboTTS.Name = "comboTTS";
+            this.comboTTS.Size = new System.Drawing.Size(138, 25);
+            this.comboTTS.TabIndex = 6;
             // 
-            // btnReconnect
+            // TTSst
             // 
-            this.btnReconnect.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReconnect.Image = global::ACT.DFAssist.Properties.Resources.Player2_Icon;
-            this.btnReconnect.Location = new System.Drawing.Point(3, 6);
-            this.btnReconnect.Name = "btnReconnect";
-            this.btnReconnect.Size = new System.Drawing.Size(236, 46);
-            this.btnReconnect.TabIndex = 10;
-            this.btnReconnect.Text = "Reconnect";
-            this.btnReconnect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReconnect.UseVisualStyleBackColor = true;
-            this.btnReconnect.Click += new System.EventHandler(this.BtnReconnect_Click);
+            this.TTSst.AutoSize = true;
+            this.TTSst.Location = new System.Drawing.Point(1, 91);
+            this.TTSst.Name = "TTSst";
+            this.TTSst.Size = new System.Drawing.Size(67, 17);
+            this.TTSst.TabIndex = 19;
+            this.TTSst.Text = "TTS Select";
             // 
-            // panel4
+            // TTSVt
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.cboUiLanguage);
-            this.panel4.Controls.Add(this.cboGameLanguage);
-            this.panel4.Controls.Add(this.lblUiLanguage);
-            this.panel4.Controls.Add(this.lblGameLanguage);
-            this.panel4.Location = new System.Drawing.Point(3, 58);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(236, 65);
-            this.panel4.TabIndex = 21;
+            this.TTSVt.AutoSize = true;
+            this.TTSVt.Location = new System.Drawing.Point(1, 127);
+            this.TTSVt.Name = "TTSVt";
+            this.TTSVt.Size = new System.Drawing.Size(76, 17);
+            this.TTSVt.TabIndex = 14;
+            this.TTSVt.Text = "TTS Volume";
+            // 
+            // trsTTS
+            // 
+            this.trsTTS.AutoSize = false;
+            this.trsTTS.Location = new System.Drawing.Point(91, 126);
+            this.trsTTS.Name = "trsTTS";
+            this.trsTTS.Size = new System.Drawing.Size(138, 25);
+            this.trsTTS.TabIndex = 20;
             // 
             // MainControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitBase);
             this.Name = "MainControl";
-            this.Size = new System.Drawing.Size(912, 559);
+            this.Size = new System.Drawing.Size(912, 516);
             this.splitBase.Panel1.ResumeLayout(false);
             this.splitBase.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitBase)).EndInit();
@@ -526,6 +585,8 @@
             this.tabPageFates.ResumeLayout(false);
             this.tabPageSetting.ResumeLayout(false);
             this.tabPageSetting.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -534,8 +595,7 @@
             this.panel1.PerformLayout();
             this.tabPageInformation.ResumeLayout(false);
             this.tabPageInformation.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trsTTS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -579,5 +639,10 @@
         private System.Windows.Forms.TextBox txtLogFont;
         private System.Windows.Forms.Label lblDisplayFont;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TrackBar trsTTS;
+        private System.Windows.Forms.Label TTSVt;
+        private System.Windows.Forms.Label TTSst;
+        private System.Windows.Forms.ComboBox comboTTS;
+        private System.Windows.Forms.CheckBox chkUseTTS;
     }
 }

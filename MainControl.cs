@@ -549,6 +549,7 @@ namespace ACT.DFAssist
 
             //
             CheckSoundEnable();
+            CheckTTSEnable();
 
             //
             try
@@ -678,11 +679,30 @@ namespace ACT.DFAssist
         #region 소리 처리
         private void CheckSoundEnable()
         {
-            txtSoundFile.Enabled = chkUseSound.Checked;
-            btnSelectSound.Enabled = chkUseSound.Checked;
+            if (chkUseSound.Checked == true)
+            {
+                txtSoundFile.Enabled = chkUseSound.Checked;
+                btnSelectSound.Enabled = chkUseSound.Checked;
+                chkUseTTS.Enabled = chkUseSound.Checked;
+                comboTTS.Enabled = chkUseTTS.Checked;
+                trsTTS.Enabled = chkUseTTS.Checked;
+            }
+            else
+            {
+                txtSoundFile.Enabled = chkUseSound.Checked;
+                btnSelectSound.Enabled = chkUseSound.Checked;
+                chkUseTTS.Enabled = chkUseSound.Checked;
+                comboTTS.Enabled = chkUseSound.Checked;
+                trsTTS.Enabled = chkUseSound.Checked;
+            }
         }
 
-        private void PlayEffectSound(bool force = false)
+        private void CheckTTSEnable()
+        {
+            comboTTS.Enabled = chkUseTTS.Checked;
+            trsTTS.Enabled = chkUseTTS.Checked;
+        }
+            private void PlayEffectSound(bool force = false)
         {
             if (!force && !chkUseSound.Checked)
                 return;
@@ -936,5 +956,10 @@ namespace ACT.DFAssist
             ActGlobals.oFormActMain.ParseRawLogLine(false, DateTime.Now, "00|" + DateTime.Now.ToString("O") + "|0048|F|" + text);
         }
         #endregion
+
+        private void chkUseTTS_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckTTSEnable();
+        }
     }
 }
